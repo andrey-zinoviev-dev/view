@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="container">
-      <span>Andrey Zinoviev</span>
+      <span>Andrey Zinoviev 2022</span>
     </div>
     
   </footer>

@@ -1,9 +1,16 @@
 <template>
   <section>
     <div class="container">
-      <button @click="closePopup">X</button>
+      <button class="popup__close-btn" @click="closePopup">X</button>
       <h2>Подробнее о книге</h2>
-      <h3>{{book.name}}</h3>
+      <div class="book">
+        <div class="book__text">
+          <h3>{{book.name}}</h3>
+          <p>{{book.description}}</p>
+          <p>Автор: {{book.author}}</p>
+        </div>
+        <img :src="book.image" alt="">
+      </div>
     </div>
     <div class="filter"></div>
   </section>
@@ -36,13 +43,31 @@
     box-sizing: border-box;
     padding: 10% 0 0 0;
   }
-  button {
+  .popup__close-btn {
     cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
   .container {
     position: relative;
     z-index: 10;
     color: white;
+  }
+  .book {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-width: 900px;
+  }
+  .book__text {
+    max-width: 360px;
+    text-align: left;
+    line-height: 1.5;
+
+  }
+  img {
+    max-width: 420px;
   }
   .filter {
     position: absolute;

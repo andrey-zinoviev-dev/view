@@ -8,10 +8,7 @@
               <button>Домой</button>
             </li>
             <li>
-              <button>Войти</button>
-            </li>
-            <li>
-              <button>Зарегистрироваться</button>
+              <button>Обо мне</button>
             </li>
           </ul>
         </nav>
@@ -26,7 +23,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   .container_flex {
     display: flex;
     justify-content: space-between;
@@ -40,7 +37,8 @@ export default {
     justify-content: space-between;
     align-items: flex-start;
     list-style: none;
-    min-width: 320px;
+    min-width: 160px;
     padding: 0;
   }
+
 </style>
