@@ -1,18 +1,26 @@
 <template>
-  <li class="content__headline-list-element" v-for="(book, index) in books" :key="index">
+  <!-- <li class="content__headline-list-element" v-for="(book, index) in books" :key="index">
     <h3 class="content__headline-list-element-headline">{{book.name}}</h3>
     <img class="content__headline-list-element-img" :src="book.image" alt="">
-    <!-- <button @click="showBook(book.name)">Подробнее</button> -->
     <button @click="showBook(book)">Подробнее</button>
-  </li>
+  </li> -->
+  <ListElementComp v-for="(book, index) in books" :key="index" class="content__headline-list-element">
+    <h3 class="content__headline-list-element-headline">{{book.name}}</h3>
+    <img class="content__headline-list-element-img" :src="book.image" alt="">
+    <button @click="showBook(book)">Подробнее</button>
+  </ListElementComp>
 </template>
 
 <script>
+  import ListElementComp from './ListElementComp.vue';
   export default {
     name: "BookComp",
     props: {
       title: String,
       books: Array,
+    },
+    components: {
+      ListElementComp,
     },
     emits: ['show-book'],
     methods: {

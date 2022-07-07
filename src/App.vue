@@ -1,6 +1,7 @@
 <script>
 import HeaderComp from './components/HeaderComp.vue';
-import MainComponent from './components/MainComponent.vue';
+// import BooksComp from './components/BooksComp.vue';
+// import AboutComp from './components/AboutComp.vue';
 import FooterComp from './components/FooterComp.vue';
 import PopupComp from './components/PopupComp.vue';
 
@@ -20,11 +21,12 @@ export default {
     },
     closePopupWindow(value) {
       this.openPopupBook = value;
-    }
+    },
   },
   components: {
     HeaderComp,
-    MainComponent,
+    // BooksComp,
+    // AboutComp,
     FooterComp,
     PopupComp,
   },
@@ -51,19 +53,29 @@ export default {
         image: require('./assets/House_of_leaves.jpg')
       }
     ];
+    this.userData = {
+      name: "Андрей Зиновьев",
+      username: "vanSchlanger",
+      age: 29,
+      education: 'РЭУ им. Г.В Плеханова',
+      courses: 'Yandex Praktikum',
+      hobbies: ["японский", "озвучка", "тренажерный зал", "ночная работа", "аним- стоп, нет"],
+      avatar: require('./assets/me.jpg'),
+    };
   }
 }
 </script>
 
 <template>
-  <HeaderComp/>
-
+  <HeaderComp :user="this.userData" />
   <main>
     <div class="container">
-      <section>
-        <h2>Alex nutyk</h2>
-        <MainComponent :booksList="books" @show-book="passBook"/>
-      </section>
+      <router-view @show-book="passBook" :booksList="this.books" :user="this.userData">
+      </router-view>
+        <!-- <BooksComp :booksList="books" @show-book="passBook"/> -->
+        <!-- <AboutComp :user="this.userData"></AboutComp> -->
+      
+
     </div>
   </main>
   <FooterComp/>

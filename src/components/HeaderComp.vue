@@ -5,10 +5,10 @@
         <nav>
           <ul class="header__nav-list">
             <li>
-              <button>Домой</button>
+              <router-link to="/">Домой</router-link>
             </li>
             <li>
-              <button>Обо мне</button>
+              <router-link :to="{name: 'About', params: { username: user.username}}">Обо мне</router-link>
             </li>
           </ul>
         </nav>
@@ -20,6 +20,12 @@
 
 export default {
     name: "HeaderComp",
+    methods: {
+
+    },
+    props: {
+      user: Object,
+    },
 }
 </script>
 
