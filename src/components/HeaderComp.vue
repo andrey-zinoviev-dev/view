@@ -8,7 +8,7 @@
               <router-link to="/">Домой</router-link>
             </li>
             <li>
-              <router-link :to="{name: 'About', params: { username: user.username}}">Обо мне</router-link>
+              <router-link :to="{name: 'About', params: { username: user.username }}">Обо мне</router-link>
             </li>
           </ul>
         </nav>
